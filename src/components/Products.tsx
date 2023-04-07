@@ -6,7 +6,7 @@ import Filter from "./Filter";
 import NoProduct from "./NoProduct";
 import Search from "./Search";
 
-const API_URL = import.meta.env.VITE_API;
+const API_URL = process.env.API_URL!;
 
 const Products = () => {
   const [product, setProduct] = useState<ProductType>([]);
