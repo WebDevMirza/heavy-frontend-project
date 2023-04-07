@@ -6,7 +6,15 @@ import Filter from "./Filter";
 import NoProduct from "./NoProduct";
 import Search from "./Search";
 
-const API_URL = process.env.API_URL!;
+let API_URL: string;
+// const API_URL = "process.env.API_URL!";
+if (import.meta.env.MODE === "development") {
+  API_URL = "alo";
+} else {
+  API_URL = import.meta.env.VITE_API;
+}
+
+console.log(API_URL);
 
 const Products = () => {
   const [product, setProduct] = useState<ProductType>([]);
